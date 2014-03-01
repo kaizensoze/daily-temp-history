@@ -1,0 +1,326 @@
+City                     Our Filename       WBAN (old)  WMO (gsod)
+                                            Station CodeStation Code
+ANCHORAGE                AKANCHOR              26451      702730
+FAIRBANKS                AKFAIRBA              26411      702610
+JUNEAU                   AKJUNEAU              25309      703810
+BIRMINGHAM               ALBIRMIN              13876      722280
+HUNTSVILLE AL            ALHUNTSV              03856      723230
+MOBILE                   ALMOBILE              13894      722230
+MONTGOMERY               ALMONTGO              13895      722260
+FORT SMITH               ARFTSMIT              13964      723440
+LITTLE ROCK              ARLIROCK              13963      723400
+FLAGSTAFF                AZFLAGST              03103      723755
+PHOENIX                  AZPHOENI              23183      722780
+TUCSON                   AZTUCSON              23160      722740
+YUMA                     AZYUMA                23195      722800
+FRESNO                   CAFRESNO              93193      723890
+LOS ANGELES              CALOSANG              23174      722950
+SACRAMENTO               CASACRAM              23232      724830
+SAN DIEGO                CASANDIE              23188      722900
+SAN FRANCISCO            CASANFRA              23234      724940
+COLORADO SPGS            COCOSPGS              93037      724660
+DENVER                   CODENVER              03017      725650
+GRAND JUNCTION           COGRNDJU              23066      724760
+PUEBLO                   COPUEBLO              93058      724640
+BRIDGEPORT               CTBRIDGE              94702      725040
+HARTFORD SPGFLD          CTHARTFO              14740      725080
+WILMINGTON DE            DEWILMIN              13781      724089
+DAYTONA BEACH            FLDAYTNA              12834      722056
+JACKSONVILLE             FLJACKSV              13889      722060
+MIAMI BEACH              FLMIAMIB              12839      722020
+ORLANDO                  FLORLAND              12815      722050
+TALLAHASSEE              FLTALLAH              93805      722140
+TAMPA ST PTRSBG          FLTAMPA               12842      722110
+W PALM BEACH             FLWPALMB              12844      722030
+ATLANTA                  GAATLANT              13874      722190
+COLUMBUS GA              GACOLMBS              93842      722255
+MACON                    GAMACON               03813      722170
+SAVANNAH                 GASAVANN              03822      722070
+HONOLULU                 HIHONOLU              22521      911820
+DES MOINES               IADESMOI              14933      725460
+SIOUX CITY               IASIOCTY              14943      725570
+BOISE                    IDBOISE               24131      726810
+POCATELLO                IDPOCATE              24156      725780
+CHICAGO                  ILCHICAG              94846      725300
+PEORIA                   ILPEORIA              14842      725320
+ROCKFORD                 ILROCKFO              94822      725430
+SPRINGFIELD IL           ILSPRING              93822      724390
+EVANSVILLE               INEVANSV              93817      724320
+FORT WAYNE               INFTWAYN              14827      725330
+INDIANAPOLIS             ININDIAN              93819      724380
+SOUTH BEND               INSOBEND              14848      725350
+GOODLAND                 KSGOODLA              23065      724650
+TOPEKA                   KSTOPEKA              13996      724560
+WICHITA                  KSWICHIT              03928      724500
+LEXINGTON                KYLEXING              93820      724220
+LOUISVILLE               KYLOUISV              93821      724230
+PADUCAH                  KYPADUCA              03816      724350
+BATON ROUGE              LABATONR              13970      722317
+LAKE CHARLES             LALAKECH              03937      722400
+NEW ORLEANS              LANEWORL              12916      722310
+SHREVEPORT               LASHREVE              13957      722480
+BOSTON                   MABOSTON              14739      725090
+BALTIMORE                MDBALTIM              93721      724060
+WASHINGTON DC            MDWASHDC              13743      724050
+CARIBOU                  MECARIBO              14607      727120
+PORTLAND ME              MEPORTLA              14764      726060
+DETROIT                  MIDETROI              94847      725370
+FLINT                    MIFLINT               14826      726370
+GRAND RAPIDS             MIGRNDRA              94860      726350
+LANSING                  MILANSIN              14836      725390
+ST STE MARIE             MISTEMAR              14847      727340
+DULUTH                   MNDULUTH              14913      727450
+MPLS ST PAUL             MNMINPLS              14922      726580
+KANSAS CITY              MOKANCTY              03947      724460
+SPRINGFIELD MO           MOSPRING              13995      724400
+ST LOUIS                 MOSTLOUI              13994      724340
+JACKSON MS               MSJACKSO              03940      722350
+TUPELO                   MSTUPELO              93862      723320
+BILLINGS                 MTBILLIN              24033      726770
+GREAT FALLS              MTGRFALL              24143      727750
+HELENA                   MTHELENA              24144      727720
+ASHEVILLE                NCASHEVI              03812      723150
+CHARLOTTE                NCCHARLO              13881      723140
+GREENSBORO               NCGRNSBO              13723      723170
+RALEIGH DURHAM           NCRALEIG              13722      723060
+BISMARCK                 NDBISMAR              24011      727640
+FARGO                    NDFARGO               14914      727530
+LINCOLN                  NELINCOL              14939      725510
+NORTH PLATTE             NENPLATT              24023      725620
+OMAHA                    NEOMAHA               14942      725500
+CONCORD NH               NHCONCOR              14745      726050
+ATLANTIC CITY            NJATLCTY              93730      724070
+NEWARK                   NJNEWARK              14734      725020
+ALBUQUERQUE              NMALBUQU              23050      723650
+LAS VEGAS                NVLASVEG              23169      723860
+RENO                     NVRENO                23185      724880
+ALBANY NY                NYALBANY              14735      725180
+BUFFALO                  NYBUFFAL              14733      725280
+NEW YORK CITY            NYNEWYOR              14732      725030
+ROCHESTER NY             NYROCHES              14768      725290
+SYRACUSE                 NYSYRACU              14771      725190
+AKRON CANTON             OHAKRON               14895      725210
+CINCINNATI               OHCINCIN              93814      724210
+CLEVELAND                OHCLEVEL              14820      725240
+COLUMBUS OH              OHCOLMBS              14821      724280
+DAYTON                   OHDAYTON              93815      724290
+TOLEDO                   OHTOLEDO              94830      725360
+YOUNGSTOWN               OHYOUNGS              14852      725250
+OKLAHOMA CITY            OKOKLCTY              13967      723530
+TULSA                    OKTULSA               13968      723560
+EUGENE                   OREUGENE              24221      726930
+MEDFORD                  ORMEDFOR              24225      725970
+PORTLAND OR              ORPORTLA              24229      726980
+SALEM OR                 ORSALEM               24232      726940
+ALLENTOWN                PAALLENT              14737      725170
+ERIE                     PAERIE                14860      725260
+HARRISBURG               PAHARRIS              14711      725115
+PHILADELPHIA             PAPHILAD              13739      724080
+PITTSBURGH               PAPITTSB              94823      725200
+WILKES BARRE             PAWILKES              14777      725130
+SAN JUAN PR              PRSANJUA              11641      785260
+PROVIDENCE               RIPROVID              14765      725070
+CHARLESTON SC            SCCHARLE              13880      722080
+COLUMBIA SC              SCCOLMBA              13883      723100
+RAPID CITY               SDRAPCTY              24090      726620
+SIOUX FALLS              SDSIOFAL              14944      726510
+CHATTANOOGA              TNCHATTA              13882      723240
+KNOXVILLE                TNKNOXVI              13891      723260
+MEMPHIS                  TNMEMPHI              13893      723340
+NASHVILLE                TNNASHVI              13897      723270
+ABILENE TX               TXABILEN              13962      722660
+AMARILLO                 TXAMARIL              23047      723630
+AUSTIN                   TXAUSTIN              13958      722540
+BROWNSVILLE              TXBROWNS              12919      722500
+CORPUS CHRISTI           TXCORPUS              12924      722510
+DALLAS FT WORTH          TXDALLAS              03927      722590
+EL PASO                  TXELPASO              23044      722700
+HOUSTON INTCNTL          TXHOUSTO              12960      722430
+LUBBOCK                  TXLUBBOC              23042      722670
+MIDLAND ODESSA           TXMIDLAN              23023      722650
+SAN ANGELO               TXSANANG              23034      722630
+SAN ANTONIO              TXSANANT              12921      722530
+WACO                     TXWACO                13959      722560
+WICHITA FALLS            TXWICHFA              13966      723510
+SALT LAKE CITY           UTSALTLK              24127      725720
+NORFOLK VA               VANORFOL              13737      723080
+RICHMOND                 VARICHMO              13740      724010
+ROANOKE                  VAROANOK              13741      724110
+BURLINGTON VT            VTBURLIN              14742      726170
+SEATTLE                  WASEATTL              24233      727930
+SPOKANE                  WASPOKAN              24157      727850
+YAKIMA                   WAYAKIMA              24243      727810
+GREEN BAY                WIGREBAY              14898      726450
+MADISON                  WIMADISO              14837      726410
+MILWAUKEE                WIMILWAU              14839      726400
+CHARLESTON WV            WVCHARLE              13866      724140
+ELKINS                   WVELKINS              13729      724170
+CASPER                   WYCASPER              24089      725690
+CHEYENNE                 WYCHEYEN              24018      725640
+MELBOURNE                AUMELBRN                         948660
+SYDNEY                   AUSYDNEY                         947670
+BRUSSELS                 BXBRUSSL                         064510
+BIEJING                  CIBIEJNG                         545110
+SHANGHAI                 CISHANGH                         583670
+CALGARY                  CNCALGRY                         718770
+EDMONTON                 CNEDMNTN                         718790
+MONTREAL                 CNMONTRL                         716270
+OTTOWA                   CNOTTOWA                         716280
+QUEBEC                   CNQUEBEC                         717140
+REGINA                   CNREGINA                         718630
+TORONTO                  CNTORONT                         716240
+VANCOUVER                CNVANCVR                         718920
+WINNIPEG                 CNWINNPG                         718520
+PRAGUE                   CZPRAGUE                         115180
+HAMBURG                  DLHAMBUR                         101490
+MUNICH                   DLMUNICH                         108660
+HELSINKI                 FIHELSIN                         029740
+PARIS                    FRPARIS                          071500
+HONG KONG                HKHONGKG                         450070
+ROME                     IYROME                           162420
+OSAKA                    JPOSAKA                          477710
+SAPPORO                  JPSAPPOR                         474250
+TOKYO                    JPTOKYO                          476710
+MEXICO CITY              MXMXCITY                         766793
+OSLO                     NOOSLO                           013840
+MANILA                   PHMANILA                         984290
+STOCKHOLM                SNSTKHLM                         024640
+MADRID                   SPMADRID                         082210
+GENEVA                   SWGENEVA                         067000
+TAIPEI                   TWTAIPEI                         466960
+ABIDJAN                  IVABIDJN                         655780
+ABU DHABI                ERABUDBI                         412170
+ADDIS ABABA              ETADSABA                         634500
+ALGIERS                  ALALGIER                         603900
+ALMATY/ASTANA            RAALMATY                         368700
+AMMAN                    JDAMMAN                          402700
+AMSTERDAM                NLAMSTDM                         062400
+ANKARA                   TUANKARA                         171280
+ANTANANARIVO             MGANTRVO                         670830
+ASHGABAT(ASHABAD)        RAASHBAD                         388800
+ATHENS                   GRATHENS                         167160
+BANGKOK                  THBNGKOK                         484560
+BANGUI                   CEBANGUI                         646500
+BANJUL                   GBBANJUL                         617010
+BARCELONA                SPBRCLNA                         081810
+BEIRUT                   LBBEIRUT                         401000
+BELFAST                  UKBELFST                         039240
+BELGRADE                 YGBLGRDE                         132720
+BELIZE CITY/BELMOPAN     BHBELIZE                         785830
+BERN                     SWBERN                           066303
+BILBAO                   SPBILBAO                         080250
+BISHKEK(FRUNZE)          RABSHKEK                         383530
+BISSAU                   GWBISSAU                         617660
+BOGOTA                   COBOGOTA                         802220
+BOMBAY(MUMBAI)           INBOMBAY                         430030
+BONN                     DLBONN                           105180
+BORDEAUX                 FRBRDAUX                         075100
+BRASILIA                 BZBRSLIA                         833780
+BRATISLAVA               CZBRTSLV                         118160
+BRAZZAVILLE              CGBRZAVL                         644500
+BRIDGETOWN               BRBRGTWN                         789540
+BUCHAREST                ROBCHRST                         154210
+BUDAPEST                 HUBUDPST                         128390
+BUENOS AIRES             AGBUENOS                         875760
+BUJUMBURA                BIBJMBRA                         643900
+CAIRO                    EGCAIRO                          623660
+CALCUTTA                 INCALCUT                         428090
+CAPETOWN                 ZACAPTWN                         688160
+CARACAS                  VNCARACS                         804150
+CHENGDU                  CICHNGDU                         562940
+CHENNAI(MADRAS)          INCHENAI                         432790
+COLOMBO                  SBCOLMBO                         434500
+CONAKRY                  GNCONKRY                         618320
+COPENHAGEN               DNCOPNHG                         061700
+COTONOU                  BJCOTNOU                         653440
+DAKAR                    SGDAKAR                          616410
+DAMASCUS                 JDAMMAN                          402700
+DAR ES SALAAM            TNDESALM                         638940
+DHAHRAN                  SDDHAHRN                         404160
+DHAKA                    BWDHAKA                          419230
+DOHA                     QTDOHA                           411700
+DUBAI                    ERDUBAI                          411940
+DUBLIN                   IEDUBLIN                         039690
+DUSANBE                  RADUSNBE                         388360
+FRANKFURT                DLFRNKFT                         106420
+FREETOWN                 SLFRETWN                         618560
+GEORGETOWN               GYGRGTWN                         810010
+GUANGZHOU                CIGNGZHO                         592870
+GUATEMALA CITY           GUGUATML                         786410
+GUAYAQUIL                EQGUAYQL                         842030
+HANOI                    VSHANOI                          488200
+HAVANA                   CUHAVANA                         782240
+ISLAMABAD                PKISLMBD                         415710
+ISTANBUL                 TUISTNBL                         170600
+JAKARTA                  IDJAKRTA                         967450
+KAMPALA                  UGKAMPAL                         637050
+KARACHI                  PKKARACH                         417800
+KATHMANDU                NPKTMNDU                         444540
+KIEV                     URKIEV                           333450
+KUALA LUMPUR             MSKUALA                          486470
+KUWAIT                   KWKUWAIT                         405820
+LA PAZ                   BOLAPAZ                          852010
+LAGOS                    NILAGOS                          652010
+LIBREVILLE               GOLIBRVL                         645000
+LILONGWE                 MWLILNGW                         675860
+LIMA                     PRLIMA                           846280
+LISBON                   POLISBON                         085360
+LOME                     TGLOME                           653870
+LONDON                   UKLONDON                         037720
+LUSAKA                   ZBLUSAKA                         676650
+MANAGUA                  NKMANAGU                         787410
+MANAMA                   BNMANAMA                         411500
+MAPUTO                   MZMAPUTO                         673410
+MILAN                    IYMILAN                          160660
+MINSK                    BYMINSK                          268500
+MONTEVIDEO               UYMNTVID                         865800
+MOSCOW                   RSMOSCOW                         275185
+MUSCAT                   OMMUSCAT                         412580
+NAIROBI                  KNNAIROB                         637420
+NEW DELHI                INDELHI                          421820
+NIAMEY                   NRNIAMEY                         610520
+NICOSIA                  CYNICOSI                         176074
+NOUAKCHOTT               MTNOKCHT                         614420
+PANAMA CITY              PMPANAMA                         787920
+PARAMARIBO               SMPRMRIB                         812250
+PRISTINA                 YGPRISTN                         134810
+PYONGYANG                KRPYGYNG                         470580
+QUITO                    EQQUITO                          840710
+RABAT                    MCRABAT                          601350
+RANGOON                  BMRNGOON                         480970
+REYKJAVIK                ILREYKJV                         040300
+RIGA                     RSRIGA                           264225
+RIO DE JANEIRO           BZRIODJN                         837550
+RIYADH                   SDRIYADH                         404370
+SAN JOSE                 CSSANJOS                         787620
+SANTO DOMINGO            DRSNTODM                         784860
+SAO PAULO                BZSAOPLO                         837800
+SEOUL                    KOSEOUL                          471100
+SHENYANG                 CISHNYNG                         543420
+SINGAPORE                SRSINGAP                         486980
+SKOPJE                   YGSKOPJE                         135860
+SOFIA                    BUSOFIA                          156140
+TASKENT                  RATASKNT                         384570
+TBILISI                  RSTBLISI                         375490
+TEGUCIGALPA              HOTEGUCI                         787200
+TEL AVIV                 ISTELAVI                         401760
+TIRANA                   ABTIRANA                         136150
+TUNIS                    TSTUNIS                          607150
+ULAN-BATOR               MOULNBTR                         442920
+VIENNA                   OSVIENNA                         110360
+VIENTIANE                LAVIENTN                         489400
+WARSAW                   PLWARSAW                         123750
+WINDHOEK                 NMWNDHOK                         681100
+YEREVAN                  RSYERVAN                         377890
+ZAGREB                   YGZAGREB                         142400
+ZURICH                   SWZURICH                         066600
+AUCKLAND                 NZACKLND                         931190
+BRISBANE                 AUBRSBAN                         945780
+CANBERRA                 AUCNBERA                         949260
+PERTH                    AUPERTH                          946100
+GUADALAJARA              MXGUADLJ                         766120
+MONTERREY                MXMONTRY                         763940
+HALIFAX                  CNHLIFAX                         713950
+HAMILTON                 BEHMLTON                         780160
+NASSAU                   BANASSAU                         780730
+PORT AU PRINCE           HAPORTAP                         784390
