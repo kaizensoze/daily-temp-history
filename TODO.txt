@@ -1,0 +1,4 @@
+update to present
+come up with script to automate download and data coercion
+
+http://academic.udayton.edu/kissock/http/Weather/gsod95-current/allsites.zip
