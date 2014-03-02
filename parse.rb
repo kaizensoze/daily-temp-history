@@ -6,14 +6,16 @@ require 'net/http'
 require 'zip/zip'
 include Mongo
 
-DATA_DIRNAME = 'temp-data'
+DATA_DIRNAME = 'data'
 
-def download_and_update_temp_data
+WeatherStation = Struct.new(:name, :country, :id, :lat, :long, :wmo)
+
+def download_latest_temp_data
   # switch to dir of running script so we're not responsible for deleting some *other* temp-data folder
   Dir.chdir(File.dirname(__FILE__))
   
   # download the zip file
-  puts "Downloading temp data..."
+  puts "Downloading latest daily temp data..."
   Net::HTTP.start("academic.udayton.edu") do |http|
     resp = http.get("/kissock/http/Weather/gsod95-current/allsites.zip")
     open("#{DATA_DIRNAME}/allsites.zip", "w") do |file|
@@ -22,7 +24,6 @@ def download_and_update_temp_data
   end
 
   # unzip the zip file into temp-data
-  puts "Unzipping the downloaded file..."
   unzip_file("#{DATA_DIRNAME}/allsites.zip", "#{DATA_DIRNAME}")
 
   # remove unwanted files
@@ -33,10 +34,10 @@ def download_and_update_temp_data
   File.delete("#{DATA_DIRNAME}/allsites.zip")
 end
 
-def load_station_data
+def get_weather_station_mapping
 end
 
-def map_filename_to_station
+def get_data_file_mapping
   city_filenames = {}
 
   File.open('date-files.txt', 'r').each_line.with_index do |line, lineno|
@@ -97,13 +98,13 @@ def read_and_insert_temp_data
 end
 
 def unzip_file (file, destination)
-  Zip::ZipFile.open(file) { |zip_file|
-   zip_file.each { |f|
-     f_path=File.join(destination, f.name)
-     FileUtils.mkdir_p(File.dirname(f_path))
-     zip_file.extract(f, f_path) unless File.exist?(f_path)
-   }
-  }
+  Zip::ZipFile.open(file) do |zip_file|
+    zip_file.each do |f|
+      f_path=File.join(destination, f.name)
+      FileUtils.mkdir_p(File.dirname(f_path))
+      zip_file.extract(f, f_path) unless File.exist?(f_path)
+    end
+  end
 end
 
 # initialize mongodb
@@ -114,4 +115,5 @@ daily_temps = db.collection('dailytemps')
 daily_temps.create_index({:date => Mongo::ASCENDING, :temp => Mongo::ASCENDING})
 daily_temps.create_index({:date => Mongo::ASCENDING, :city => Mongo::ASCENDING}, :unique => true)
 
-download_and_update_temp_data
+download_latest_temp_data
+weather_station_hash = get_weather_station_mapping

@@ -1,10 +1,7 @@
 
-switch to rethinkdb
+create station struct
+load station data, mapping WMO to WeatherStation struct
 
-when grabbing the WMO, exclude last digit
+load data file list, mapping filename to WMO (exclude last digit)
 
 date field is a pain in the ass => change to individual year, month, day fields
-
-db.getCollectionNames()
-db.dailytemps.find({$where : function() { return this.date.getMonth() == 1 && this.date.getDate() == 26 && this.date.getFullYear() >= 2007 && this.temp >= 40 && this.temp <= 55; } });
-db.dailytemps.drop()
