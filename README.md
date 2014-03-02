@@ -13,13 +13,14 @@ where -99 is a placeholder for missing data
 
 http://academic.udayton.edu/kissock/http/Weather/source.htm
 
+data urls
 
+temp data: http://academic.udayton.edu/kissock/http/Weather/gsod95-current/allsites.zip
+data file list: http://academic.udayton.edu/kissock/http/Weather/citywbanwmo.txt
+station list: http://www.wunderground.com/about/faq/international_cities.asp, http://weather.rap.ucar.edu/surface/stations.txt
 
-Starting from scratch when downloading the latest temperature data: (http://academic.udayton.edu/kissock/http/Weather/gsod95-current/allsites.zip)
+Starting from scratch when downloading the latest temperature data:
 
 remove ISTELAVIV.txt
 remove WS_FTP.LOG
 replace second JDAMMAN with SYDMSCUS in the cities list
-
-
-station list: http://weather.rap.ucar.edu/surface/stations.txt
