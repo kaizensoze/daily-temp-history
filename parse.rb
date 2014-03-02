@@ -1,23 +1,36 @@
 
 require 'date'
+require 'fileutils'
 require 'mongo'
 require 'net/http'
+require 'zip/zip'
 include Mongo
 
-def download_and_update_temp_data
-  # http://academic.udayton.edu/kissock/http/Weather/gsod95-current/allsites.zip
-  
-  puts "Downloading temp data..."
+DATA_DIRNAME = 'temp-data'
 
+def download_and_update_temp_data
+  # switch to dir of running script so we're not responsible for deleting some *other* temp-data folder
+  Dir.chdir(File.dirname(__FILE__))
+  
+  # download the zip file
+  puts "Downloading temp data..."
   Net::HTTP.start("academic.udayton.edu") do |http|
     resp = http.get("/kissock/http/Weather/gsod95-current/allsites.zip")
-    open("allsites.zip", "w") do |file|
+    open("#{DATA_DIRNAME}/allsites.zip", "w") do |file|
       file.write(resp.body)
     end
   end
 
-  # clear old files in data folder
-  FileUtils.rm_rf(Dir.glob('data/*'))
+  # unzip the zip file into temp-data
+  puts "Unzipping the downloaded file..."
+  unzip_file("#{DATA_DIRNAME}/allsites.zip", "#{DATA_DIRNAME}")
+
+  # remove unwanted files
+  File.delete("#{DATA_DIRNAME}/ISTELAVIV.txt")
+  File.delete("#{DATA_DIRNAME}/WS_FTP.LOG")
+
+  # remove the zip file
+  File.delete("#{DATA_DIRNAME}/allsites.zip")
 end
 
 def load_station_data
@@ -81,6 +94,16 @@ def read_and_insert_temp_data
       end
     end
   end
+end
+
+def unzip_file (file, destination)
+  Zip::ZipFile.open(file) { |zip_file|
+   zip_file.each { |f|
+     f_path=File.join(destination, f.name)
+     FileUtils.mkdir_p(File.dirname(f_path))
+     zip_file.extract(f, f_path) unless File.exist?(f_path)
+   }
+  }
 end
 
 # initialize mongodb

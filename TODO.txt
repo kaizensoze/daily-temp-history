@@ -1,12 +1,4 @@
 
-automate updating temp data
-	clear files in data folder
-	grab zip file
-	uncompress and place in data folder
-	remove ISTELAVIV.txt
-	remove WS_FTP.LOG
-
-
 switch to rethinkdb
 
 when grabbing the WMO, exclude last digit
