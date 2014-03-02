@@ -234,7 +234,7 @@ CONAKRY                  GNCONKRY                         618320
 COPENHAGEN               DNCOPNHG                         061700
 COTONOU                  BJCOTNOU                         653440
 DAKAR                    SGDAKAR                          616410
-DAMASCUS                 JDAMMAN                          402700
+DAMASCUS                 SYDMSCUS                         402700
 DAR ES SALAAM            TNDESALM                         638940
 DHAHRAN                  SDDHAHRN                         404160
 DHAKA                    BWDHAKA                          419230

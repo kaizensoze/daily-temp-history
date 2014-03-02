@@ -12,3 +12,14 @@ month | day | year | average daily temp |
 where -99 is a placeholder for missing data
 
 http://academic.udayton.edu/kissock/http/Weather/source.htm
+
+
+
+Starting from scratch when downloading the latest temperature data: (http://academic.udayton.edu/kissock/http/Weather/gsod95-current/allsites.zip)
+
+remove ISTELAVIV.txt
+remove WS_FTP.LOG
+replace second JDAMMAN with SYDMSCUS in the cities list
+
+
+station list: http://weather.rap.ucar.edu/surface/stations.txt
