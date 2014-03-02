@@ -1,4 +1,8 @@
 update to present
-come up with script to automate download and data coercion
+come up with script to automate download and data coercion (http://academic.udayton.edu/kissock/http/Weather/gsod95-current/allsites.zip)
+figure out how to map to separate city state fields
+date field is a pain in the ass => change to individual year, month, day fields?
 
-http://academic.udayton.edu/kissock/http/Weather/gsod95-current/allsites.zip
+db.getCollectionNames()
+db.dailytemps.find({$where : function() { return this.date.getMonth() == 1 && this.date.getDate() == 26 && this.date.getFullYear() >= 2007 && this.temp >= 40 && this.temp <= 55; } });
+db.dailytemps.drop()
