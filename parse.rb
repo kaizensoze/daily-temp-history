@@ -1,14 +1,19 @@
 
 require 'date'
 require 'fileutils'
+require 'json'
+require 'json/add/core'
 require 'mongo'
 require 'net/http'
 require 'zip/zip'
 include Mongo
 
+# daily temp data path
 DATA_DIRNAME = 'data'
 
-WeatherStation = Struct.new(:name, :country, :id, :lat, :long, :wmo)
+# weather station struct
+WeatherStation = Struct.new(:name, :province, :country, :id, :lat, :long, :wmo)
+
 
 def download_latest_temp_data
   # switch to dir of running script so we're not responsible for deleting some *other* temp-data folder
@@ -34,60 +39,111 @@ def download_latest_temp_data
   File.delete("#{DATA_DIRNAME}/allsites.zip")
 end
 
-def get_weather_station_mapping
+def get_weather_stations
+  weather_stations = {}
+
+  File.open('stations.txt', 'r').each_line.with_index do |line, lineno|
+    next if lineno <= 2
+
+    name = line[0..25]
+    province = line[26..27]
+    country = line[29..30]
+    id = line[33..36]
+    lat = line[42..47]
+    long = line[49..55]
+    wmo = line[63..67]
+
+    # puts "#{name} #{province} #{country} #{id} #{lat} #{long} #{wmo}"
+
+    # remove any leading/trailing whitespace
+    name.strip!
+    province.strip!
+    country.strip!
+    id.strip!
+    lat.strip!
+    long.strip!
+    wmo.strip!
+
+    weather_stations[wmo] = WeatherStation.new(name, province, country, id, lat, long, wmo)
+  end
+
+  return weather_stations
 end
 
-def get_data_file_mapping
-  city_filenames = {}
+def get_data_files
+  data_files = {}
 
-  File.open('date-files.txt', 'r').each_line.with_index do |line, lineno|
+  File.open('files.txt', 'r').each_line.with_index do |line, lineno|
     next if lineno <= 1
 
-    tokens = line.split(/\s\s+/)
-    filename = tokens[1]
-    city = tokens[0]
-    # puts "#{filename} #{city}"
-    city_filenames[filename] = city
+    filename = line[25..32]
+    wmo = line[58..62]
+
+    # puts "#{filename} #{wmo}"
+
+    filename.strip!
+    wmo.strip!
+
+    data_files[filename] = wmo
   end
+
+  return data_files
 end
 
-def read_and_insert_temp_data
-  Dir.foreach('data') do |filename|
+def insert_data(weather_stations, data_files)
+  # initialize mongodb collection
+  db = Connection.new.db('test')
+  daily_temps = db.collection('dailytemps')
+
+  # drop the collection
+  daily_temps.drop()
+
+  Dir.foreach("#{DATA_DIRNAME}") do |filename|
     next if filename == '.' || filename == '..'
     next if File.extname(filename) != '.txt'
 
     file_basename = File.basename(filename, '.txt')
 
-    File.open("data/#{filename}").each_line do |line|
-      tokens = line.split()
+    # create mongodb indexes
+    daily_temps.create_index({:date => Mongo::ASCENDING, :temp => Mongo::ASCENDING})
+    daily_temps.create_index({
+      'year' => Mongo::ASCENDING,
+      'month' => Mongo::ASCENDING, 
+      'day' => Mongo::ASCENDING,
+      'station.wmo' => Mongo::ASCENDING}, :unique => true)
 
-      city = city_filenames[file_basename]
+    wmo = data_files[file_basename]
+    weather_station = weather_stations[wmo]
+    
+    # next
+
+    File.open("#{DATA_DIRNAME}/#{filename}").each_line do |line|
+      tokens = line.split()
 
       month = tokens[0].to_i
       day = tokens[1].to_i
       year = tokens[2].to_i
-
-      # create date from month, day, year
-      begin
-        # ruby mongo driver requires conversion to UTC time
-        utc_time = DateTime.new(year, month, day).to_time.utc  
-      rescue => msg
-        # ignore bizarre handling of leap year
-      end
-
       temp = tokens[3].to_i
 
       if temp != -99
-        p "#{file_basename} #{month} #{day} #{year} #{temp}"
+        puts " #{weather_station.country} #{weather_station.province} #{weather_station.name} #{year} #{month} #{day} #{temp}"
 
         # create record and insert into mongodb
-        daily_temp = { :city => city, :date => utc_time, :temp => temp }
+        daily_temp = { :month => month, :day => day, :year => year, :temp => temp, :station => {
+          :name => weather_station.name,
+          :province => weather_station.province,
+          :country => weather_station.country,
+          :id => weather_station.id,
+          :lat => weather_station.lat,
+          :long => weather_station.long,
+          :wmo => weather_station.wmo
+        }}
 
         begin
           daily_temps.insert(daily_temp)
         rescue Mongo::OperationFailure => e
           if e.message =~ /^11000/
-            puts "Ignoring duplicate."
+            puts e
           else
             raise e
           end
@@ -107,13 +163,14 @@ def unzip_file (file, destination)
   end
 end
 
-# initialize mongodb
-db = Connection.new.db('test')
-daily_temps = db.collection('dailytemps')
-
-#indexes
-daily_temps.create_index({:date => Mongo::ASCENDING, :temp => Mongo::ASCENDING})
-daily_temps.create_index({:date => Mongo::ASCENDING, :city => Mongo::ASCENDING}, :unique => true)
-
+# download latest daily temp data
 download_latest_temp_data
-weather_station_hash = get_weather_station_mapping
+
+# get the list of weather stations, mapping WMO to the weather station struct
+weather_stations = get_weather_stations
+
+# get the list of data files, mapping filename to WMO
+data_files = get_data_files
+
+# insert the daily temp data into the database
+insert_data(weather_stations, data_files)

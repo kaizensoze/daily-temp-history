@@ -10683,7 +10683,7 @@ Asuncion Guarany             PY  SGES     -25.45  -54.85   849 WSGES
 Zandery                      SM  SMJP       5.45  -55.18    15 WSMJP
 Mayaguez                  PR US  TJMZ      18.26  -67.15     8 WTJMZ
 Ponce                     PR US  TJPS      18.01  -66.56     7 WTJPS
-Pago Pago                 AS US  NSTU      -14.33 -170.72     3 9176
+Pago Pago                 AS US  NSTU     -14.33 -170.72     3 91765
 Atyrau                       KZ  UATG      47.12   51.82    22 WUATG
 Polyarny                     RS  UERP      66.42  112.05   509 WUERP
 Shirak                       TU  UGEL      40.75   43.85  1524 WUGEL

@@ -1,7 +1,3 @@
 
-create station struct
-load station data, mapping WMO to WeatherStation struct
-
-load data file list, mapping filename to WMO (exclude last digit)
-
-date field is a pain in the ass => change to individual year, month, day fields
+87576 1997 4 21 60
+11000: E11000 duplicate key error index: test.dailytemps.$year_1_month_1_day_1_station.wmo_1  dup key: { : 1997, : 4, : 21, : null }
