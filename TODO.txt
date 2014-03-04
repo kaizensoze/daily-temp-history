@@ -1,3 +1,9 @@
+* given inputs of 
 
-87576 1997 4 21 60
-11000: E11000 duplicate key error index: test.dailytemps.$year_1_month_1_day_1_station.wmo_1  dup key: { : 1997, : 4, : 21, : null }
+min temp
+max temp
+year
+
+list stations sorted by number of days with average daily temps falling into given range in given year [in decreasing order]
+
+* clicking on city will then show temp chart for entire year
