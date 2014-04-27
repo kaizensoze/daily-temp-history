@@ -1,4 +1,12 @@
 
+## requirements
+
+    gem install mongo
+    gem install bson_ext
+    gem install zip
+
+## info
+
 The goal of this project is to take a history of daily average temperatures in various cities throughout the world
 and make it easily searchable.
 
@@ -14,7 +22,7 @@ where -99 is a placeholder for missing data
 http://academic.udayton.edu/kissock/http/Weather/source.htm
 
 
-data urls
+### data urls
 
 temp data: http://academic.udayton.edu/kissock/http/Weather/gsod95-current/allsites.zip
 data file list: http://academic.udayton.edu/kissock/http/Weather/citywbanwmo.txt
@@ -26,11 +34,14 @@ remove ISTELAVIV.txt
 remove WS_FTP.LOG
 replace second JDAMMAN with SYDMSCUS in the cities list
 
-convenient mongodb commands
+### mongodb commands
 
 db.getCollectionNames()
 db.dailytemps.find({ month: 3, day: 4, year: 2013, temp: { $gt: 40, $lt: 60 } }, { "station.name": 1, _id: 0 }).toArray()
+db.dailytemps.distinct('station')
 db.dailytemps.drop()
+db.dailytemps.ensureIndex({"station":1})
+db.system.profile.find({ns:"test.$cmd"}, {command:1, millis:1})
 
 mongo test << EOF > output.json
 db.dailytemps.find({ month: 3, day: 4, year: 2013, temp: { \$gt: 40, \$lt: 60 } }, { "station.name": 1, _id: 0 }).toArray()

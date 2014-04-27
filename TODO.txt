@@ -1,3 +1,5 @@
+identify wmos that don't match to a weather station
+
 * given inputs of 
 
 min temp
