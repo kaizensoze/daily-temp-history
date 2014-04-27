@@ -204,7 +204,7 @@ def unzip_file (file, destination)
 end
 
 # download latest daily temp data
-# download_latest_temp_data
+download_latest_temp_data
 
 # get the list of weather stations, mapping WMO to the weather station struct
 weather_stations = get_weather_stations
@@ -213,5 +213,6 @@ weather_stations = get_weather_stations
 data_files = get_data_files
 
 # insert the daily temp data into the database
-# insert_data(weather_stations, data_files)
-test_insert_station_data_file(weather_stations, data_files, "DLHAMBUR.txt")
+insert_data(weather_stations, data_files)
+
+# test_insert_station_data_file(weather_stations, data_files, "DLHAMBUR.txt")
