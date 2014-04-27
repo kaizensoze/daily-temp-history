@@ -1,0 +1,23 @@
+{
+  "name": "daily-temp-history",
+  "version": "0.0.0",
+  "description": "Daily temp data.",
+  "main": "backend.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/duckspeaker/daily-temp-history.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duckspeaker/daily-temp-history/issues"
+  },
+  "homepage": "https://github.com/duckspeaker/daily-temp-history",
+  "dependencies": {
+    "express": "^4.1.0",
+    "mongodb": "^1.4.2"
+  }
+}
