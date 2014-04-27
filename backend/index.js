@@ -16,12 +16,6 @@ app.get('/stations', function(req, res) {
     if (err) throw err;
 
     var collection = db.collection('dailytemps');
-    // collection
-    //   .find({})
-    //   .limit(10)
-    //   .toArray(function(err, docs) {
-    //     console.log(docs);
-    //   });
     collection.distinct('station', function(err, docs) {
       res.send(docs);
     });
@@ -29,17 +23,17 @@ app.get('/stations', function(req, res) {
 });
 
 app.get('/stations/:wmo', function(req, res) {
-  console.log(req.params.wmo);
+  var station_wmo = req.params.wmo;
+  
   mongo.connect('mongodb://127.0.0.1:27017/test', function(err, db) {
     if (err) throw err;
 
     var collection = db.collection('dailytemps');
     collection
-      .find({})
+      .find({'station.wmo':station_wmo}, {'_id':0, 'year':1, 'month':1, 'day':1, 'temp':1})
       .toArray(function(err, docs) {
-        console.log(docs);
+        res.send(docs);
       });
-    });
   });
 });
 

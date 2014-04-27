@@ -191,6 +191,7 @@ def create_indexes (collection)
     'day' => Mongo::ASCENDING,
     'station.wmo' => Mongo::ASCENDING}, :unique => true)
   collection.create_index('station')
+  collection.create_index('station.wmo')
   collection.create_index('station.name')
 end
 
