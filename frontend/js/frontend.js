@@ -5,4 +5,10 @@ $(document).ready(function() {
       $('#stations').append($('<option>').text(station.name).attr('value', station.wmo));
     });
   });
+
+  loadChart();
 });
+
+function loadChart() {
+  
+}

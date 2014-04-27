@@ -28,4 +28,19 @@ app.get('/stations', function(req, res) {
   });
 });
 
+app.get('/stations/:wmo', function(req, res) {
+  console.log(req.params.wmo);
+  mongo.connect('mongodb://127.0.0.1:27017/test', function(err, db) {
+    if (err) throw err;
+
+    var collection = db.collection('dailytemps');
+    collection
+      .find({})
+      .toArray(function(err, docs) {
+        console.log(docs);
+      });
+    });
+  });
+});
+
 app.listen(3000);

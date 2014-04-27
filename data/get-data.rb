@@ -9,7 +9,7 @@ require 'zip/zip'
 include Mongo
 
 # daily temp data path
-DATA_DIRNAME = 'data'
+DATA_DIRNAME = 'data-files'
 
 # weather station struct
 WeatherStation = Struct.new(:name, :province, :country, :id, :lat, :long, :wmo)
@@ -191,6 +191,7 @@ def create_indexes (collection)
     'day' => Mongo::ASCENDING,
     'station.wmo' => Mongo::ASCENDING}, :unique => true)
   collection.create_index('station')
+  collection.create_index('station.name')
 end
 
 def unzip_file (file, destination)
