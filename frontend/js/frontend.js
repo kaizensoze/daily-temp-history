@@ -100,7 +100,8 @@ function loadChart(station_wmo) {
       // cursor
       chartCursor = new AmCharts.ChartCursor();
       chartCursor.cursorPosition = "mouse";
-      chartCursor.pan = true; // set it to fals if you want the cursor to work in "select" mode
+      chartCursor.pan = false;
+      chartCursor.zoomable = true;
       chart.addChartCursor(chartCursor);
 
       // scrollbar
