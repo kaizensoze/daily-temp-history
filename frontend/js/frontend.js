@@ -91,6 +91,7 @@ function loadChart(station_wmo) {
       graph.bulletBorderColor = "#FFFFFF";
       graph.bulletBorderThickness = 2;
       graph.bulletBorderAlpha = 1;
+      graph.connect = false;
       graph.lineThickness = 2;
       graph.lineColor = "#5fb503";
       graph.negativeLineColor = "#efcc26";
